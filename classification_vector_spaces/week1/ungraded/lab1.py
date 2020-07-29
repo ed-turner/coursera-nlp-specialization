@@ -4,8 +4,6 @@ import pandas as pd
 
 import nltk  # Python library for NLP
 from nltk.corpus import twitter_samples  # sample Twitter dataset from NLTK
-import plotly.express as px  # library for visualization
-import random  # pseudo-random number generator
 
 import re  # library for regular expression operations
 import string  # for string operations
@@ -34,8 +32,8 @@ def get_twitter_data() -> pd.DataFrame:
     df1 = pd.DataFrame(data=all_positive_tweets, columns=['tweets'])
     df2 = pd.DataFrame(data=all_negative_tweets, columns=['tweets'])
 
-    df1["label"] = 1
-    df2["label"] = 0
+    df1["label"] = 'positive'
+    df2["label"] = 'negative'
 
     return pd.concat([df1, df2], ignore_index=True)
 
